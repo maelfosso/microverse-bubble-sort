@@ -2,7 +2,7 @@
 def bubble_sort(array)
   for i in 0..array.size - 2
     for j in 0..array.size - 2
-      if (array[j] > array[j + 1])
+      if (array[j] <=> array[j + 1] > 0)
         tmp = array[j]
         array[j] = array[j + 1]
         array[j + 1] = tmp
@@ -14,6 +14,9 @@ def bubble_sort(array)
 end
 
 def bubble_sort_by(array)
+
+  return nil if !block_given?
+
   for i in 0..array.size - 2
     for j in 0..array.size - 2
       cmp = yield(array[j], array[j + 1])
