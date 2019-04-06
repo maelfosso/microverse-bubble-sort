@@ -15,7 +15,7 @@ end
 
 def bubble_sort_by(array)
 
-  return nil if !block_given?
+  return bubble_sort(array) if !block_given?
 
   for i in 0..array.size - 2
     for j in 0..array.size - 2
